@@ -19,7 +19,7 @@ export default () => {
   app.use(bodyParser.json())
   //解析url后面的参数
   app.use(bodyParser.urlencoded({extended: true}))
-
+  // 暴露端口方法
   app.listenAsync = util.promisify(app.listen)
   // 加载路由
   require(process.cwd() + "/app/routes/router.js")(app)
